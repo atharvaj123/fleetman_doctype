@@ -1,0 +1,68 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-03-27 15:35:37.713463",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Resource"
+  },
+  {
+   "fieldname": "part / Service",
+   "fieldtype": "Link",
+   "label": "Part",
+   "options": "Item",
+   "filters": {
+    "item_group": ["in", ["Spare Parts", "Lubricants", "Maintenance Jobs"]]
+   }
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nService\nParts"
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "",
+ "letterhead": null,
+ "modified": "2025-03-27 21:14:17.722261",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Cost of Servicing Report",
+ "owner": "abdev001@ambibuzz.com",
+ "prepared_report": 0,
+ "ref_doctype": "VM Job Card",
+ "report_name": "Cost of Servicing Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "WKT Garage User"
+  },
+  {
+   "role": "WKT Garage Admin"
+  }
+ ],
+ "timeout": 0
+}
