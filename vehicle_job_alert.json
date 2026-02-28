@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "autoname": "format:VJA-{vehicle}-{######}",
+ "creation": "2024-11-05 15:50:48.377619",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "column_break_ymha",
+  "date",
+  "reason",
+  "vehicle_maintenance_schedule"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Resource"
+  },
+  {
+   "fieldname": "column_break_ymha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "label": "Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_maintenance_schedule",
+   "fieldtype": "Link",
+   "label": "Vehicle Maintenance Schedule",
+   "options": "Vehicle Maintenance Schedule",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "modified": "2024-11-30 20:36:04.219662",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Vehicle Job Alert",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

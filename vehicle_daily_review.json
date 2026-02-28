@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "autoname": "format:VDR-{vehicle}-{date}-{##}",
+ "creation": "2024-08-29 14:20:28.777761",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "vehicle",
+  "section_break_esgo",
+  "review",
+  "section_break_edja",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_edja",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Daily Review",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Review",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_esgo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "review",
+   "fieldtype": "Table",
+   "label": "Review",
+   "options": "Vehicle Review Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-29 14:29:49.489705",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Vehicle Daily Review",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "autoname": "format:VMR-{vmr_vehicle}-{MM}{YY}-{####}",
+ "creation": "2024-07-16 22:27:52.040582",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "record_details_section",
+  "vmr_vehicle",
+  "vmr_driver",
+  "last_maintenance_odo",
+  "vmr_date",
+  "section_break_nkof",
+  "total_cost",
+  "part_cost",
+  "service_cost",
+  "job_cards_section",
+  "vm_job_card_datatable"
+ ],
+ "fields": [
+  {
+   "fieldname": "record_details_section",
+   "fieldtype": "Section Break",
+   "label": "Record Details"
+  },
+  {
+   "fieldname": "vmr_vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Resource",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vm_job_card_datatable",
+   "fieldtype": "HTML",
+   "label": "VM Job Card Datatable"
+  },
+  {
+   "fieldname": "job_cards_section",
+   "fieldtype": "Section Break",
+   "label": "Job Cards"
+  },
+  {
+   "description": "Fetched from Job Cards",
+   "fieldname": "service_cost",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Service Cost",
+   "read_only": 1
+  },
+  {
+   "description": "Fetched from Job Cards",
+   "fieldname": "part_cost",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Part Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Total Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_maintenance_odo",
+   "fieldtype": "Int",
+   "label": "Last Maintenance Odometer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmr_driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver and Operator"
+  },
+  {
+   "fieldname": "section_break_nkof",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "vmr_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Job Cards",
+   "link_doctype": "VM Job Card",
+   "link_fieldname": "vmjc_vmr"
+  }
+ ],
+ "modified": "2025-08-06 11:58:28.467760",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Vehicle Maintenance Record",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "vmr_vehicle",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "vmr_vehicle",
+ "track_changes": 1
+}

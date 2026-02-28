@@ -1,0 +1,248 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:VMJC-{vmjc_vehicle}-{MM}{YY}-{####}",
+ "creation": "2024-07-19 13:59:32.879241",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "links_section",
+  "vmjc_vmr",
+  "column_break_wghi",
+  "vmjc_vehicle",
+  "vmjc_trailer",
+  "section_break_msvz",
+  "vmjc_start_date",
+  "vmjc_start_time",
+  "vmjc_in_odometer",
+  "vmjc_difference_of_days",
+  "column_break_pauh",
+  "vmjc_end_date",
+  "vmjc_end_time",
+  "vmjc_end_odometer",
+  "section_break_lgcu",
+  "amended_from",
+  "job_details_tab",
+  "job_details_section",
+  "vmjc_last_vmjc_ref",
+  "column_break_lhab",
+  "vmjc_last_service_date",
+  "section_break_gjqi",
+  "vmjc_jobs",
+  "parts_section",
+  "vmjc_refresh_parts",
+  "vmjc_part_datatable"
+ ],
+ "fields": [
+  {
+   "fieldname": "links_section",
+   "fieldtype": "Section Break",
+   "label": "Links"
+  },
+  {
+   "fieldname": "vmjc_vmr",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Maintenance Record",
+   "options": "Vehicle Maintenance Record"
+  },
+  {
+   "fieldname": "column_break_wghi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vmjc_vmr.vmr_vehicle",
+   "fieldname": "vmjc_vehicle",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Resource"
+  },
+  {
+   "fieldname": "vmjc_trailer",
+   "fieldtype": "Link",
+   "label": "Trailer",
+   "link_filters": "[[\"Resource\",\"resource_type\",\"=\",\"Trailer\"]]",
+   "options": "Resource"
+  },
+  {
+   "fieldname": "section_break_msvz",
+   "fieldtype": "Section Break",
+   "label": "Job Timeline"
+  },
+  {
+   "fieldname": "vmjc_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vmjc_start_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "vmjc_in_odometer",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Start Odometer",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "vmjc_difference_of_days",
+   "fieldtype": "Data",
+   "label": "Difference of Days"
+  },
+  {
+   "fieldname": "column_break_pauh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vmjc_end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "vmjc_end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "vmjc_end_odometer",
+   "fieldtype": "Int",
+   "label": "End Odometer",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "section_break_lgcu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "VM Job Card",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "job_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Job Details"
+  },
+  {
+   "fieldname": "job_details_section",
+   "fieldtype": "Section Break",
+   "label": "Job Details"
+  },
+  {
+   "fieldname": "column_break_lhab",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vmjc_last_service_date",
+   "fieldtype": "Date",
+   "label": "Last Service Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gjqi",
+   "fieldtype": "Section Break",
+   "label": "Jobs Done"
+  },
+  {
+   "fieldname": "vmjc_jobs",
+   "fieldtype": "Table",
+   "label": "Jobs",
+   "options": "VMJC Service Details"
+  },
+  {
+   "fieldname": "parts_section",
+   "fieldtype": "Section Break",
+   "label": "Parts"
+  },
+  {
+   "fieldname": "vmjc_last_vmjc_ref",
+   "fieldtype": "Link",
+   "label": "Last Job Card",
+   "options": "VM Job Card",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjc_part_datatable",
+   "fieldtype": "HTML",
+   "label": "Parts Done"
+  },
+  {
+   "fieldname": "vmjc_refresh_parts",
+   "fieldtype": "Button",
+   "label": "Refresh parts"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-01 12:25:14.552119",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "VM Job Card",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "vmjc_vehicle, vmjc_vmr",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

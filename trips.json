@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-07-20 21:54:53.859380",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "t_vehicle",
+  "t_expected_start",
+  "column_break_nsqi",
+  "t_driver",
+  "t_expected_end",
+  "section_break_ttpk",
+  "t_job_type",
+  "section_break_gt4g",
+  "amended_from",
+  "naming_series",
+  "trip_info_tab",
+  "locations_section",
+  "t_start_date",
+  "t_start_time",
+  "start_address",
+  "t_start_gps",
+  "t_start_odo",
+  "t_start_loc",
+  "column_break_ugxe",
+  "t_end_date",
+  "t_end_time",
+  "end_address",
+  "t_end_gps",
+  "t_end_odo",
+  "t_end_loc",
+  "section_break_sayp",
+  "distance_travelled",
+  "column_break_dzkx",
+  "time_taken",
+  "trip_violations_tab"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gt4g",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Trips",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "t_vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nsqi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "t_driver",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Driver",
+   "options": "Driver",
+   "reqd": 1
+  },
+  {
+   "fieldname": "locations_section",
+   "fieldtype": "Section Break",
+   "label": "Locations"
+  },
+  {
+   "fieldname": "t_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "t_start_gps",
+   "fieldtype": "Data",
+   "label": "Start GPS"
+  },
+  {
+   "fieldname": "t_start_odo",
+   "fieldtype": "Int",
+   "label": "Start Odometer",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "t_start_loc",
+   "fieldtype": "Geolocation",
+   "label": "Start Location"
+  },
+  {
+   "fieldname": "column_break_ugxe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "t_end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "t_end_gps",
+   "fieldtype": "Data",
+   "label": "End GPS"
+  },
+  {
+   "fieldname": "t_end_odo",
+   "fieldtype": "Int",
+   "label": "End Odometer",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "t_end_loc",
+   "fieldtype": "Geolocation",
+   "label": "End Location"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "T-.DD..MM.-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "t_start_time",
+   "fieldtype": "Time",
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "t_end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "trip_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Trip Info"
+  },
+  {
+   "fieldname": "t_expected_start",
+   "fieldtype": "Date",
+   "label": "Expected Start"
+  },
+  {
+   "fieldname": "t_expected_end",
+   "fieldtype": "Date",
+   "label": "Expected End"
+  },
+  {
+   "fieldname": "section_break_ttpk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "t_job_type",
+   "fieldtype": "Data",
+   "label": "Job Type"
+  },
+  {
+   "fieldname": "trip_violations_tab",
+   "fieldtype": "Tab Break",
+   "label": "Trip Violations"
+  },
+  {
+   "fieldname": "section_break_sayp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "distance_travelled",
+   "fieldtype": "Int",
+   "label": "Distance Travelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "start_address",
+   "fieldtype": "Small Text",
+   "label": "Start Address"
+  },
+  {
+   "fieldname": "end_address",
+   "fieldtype": "Small Text",
+   "label": "End Address"
+  },
+  {
+   "fieldname": "column_break_dzkx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time_taken",
+   "fieldtype": "Time",
+   "label": "Time Taken"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-28 22:54:51.609508",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Trips",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

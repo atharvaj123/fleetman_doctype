@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:VD-{vd_vehicle}-{vd_document_type}-{####}",
+ "creation": "2024-07-19 23:11:36.613883",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vd_vehicle",
+  "document_details_section",
+  "vd_document_type",
+  "column_break_hjmx",
+  "vd_issue_date",
+  "vd_expiry_date",
+  "section_break_kblm",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_kblm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Document",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "vd_vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Resource",
+   "reqd": 1
+  },
+  {
+   "fieldname": "document_details_section",
+   "fieldtype": "Section Break",
+   "label": "Document Details"
+  },
+  {
+   "fieldname": "vd_document_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Document Type",
+   "options": "Document Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hjmx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vd_issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Issue Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vd_expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-11 16:13:00.752082",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Vehicle Document",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

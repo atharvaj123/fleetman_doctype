@@ -1,0 +1,251 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{vmjcpd_job_ref}-{vmjcpd_resource_type}-{vmjcpd_part}-{#####}",
+ "creation": "2024-11-05 15:35:19.433213",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vmjcpd_part",
+  "vmjcpd_batch",
+  "vmjcpd_serial_no",
+  "vmjcpd_warehouse",
+  "vmjcpd_date",
+  "vmjcpd_qty",
+  "vmjcpd_uom",
+  "vmjcpd_notes",
+  "column_break_ieaq",
+  "vmjcpd_available_quantity",
+  "vmjcpd_resource_type",
+  "vmjcpd_stock_ref",
+  "vmjcpd_stock_cost",
+  "vmjcpd_job_ref",
+  "vmjcpd_vehicle",
+  "vmjcpd_trailer",
+  "vmjcpd_is_cancelled",
+  "vmjcpd_cancelling_date",
+  "vmjcpd_is_external_job",
+  "vmjcpd_purchase_invoice",
+  "section_break_iseq",
+  "vmjcpd_last_jc",
+  "column_break_btlt",
+  "vmjcpd_last_jc_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "vmjcpd_part",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Part",
+   "options": "Item",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "vmjcpd_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcpd_notes",
+   "fieldtype": "Small Text",
+   "label": "Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_iseq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vmjcpd_last_jc",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Last Job Card",
+   "options": "VM Job Card",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_btlt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vmjcpd_last_jc_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Last Job Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcpd_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vmjcpd_part.stock_uom",
+   "fieldname": "vmjcpd_uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Uom",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcpd_warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ieaq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vmjcpd_available_quantity",
+   "fieldtype": "Data",
+   "label": "Available Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcpd_resource_type",
+   "fieldtype": "Select",
+   "label": "Resource Type",
+   "options": "Vehicle\nTrailer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcpd_stock_ref",
+   "fieldtype": "Link",
+   "label": "Stock ref.",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcpd_job_ref",
+   "fieldtype": "Link",
+   "label": "VM Job ref.",
+   "options": "VM Job Card",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vmjcpd_job_ref.vmjc_vehicle",
+   "fieldname": "vmjcpd_vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Resource",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "vmjcpd_is_cancelled",
+   "fieldtype": "Check",
+   "label": "Is Cancelled",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vmjcpd_job_ref.vmjc_trailer",
+   "fieldname": "vmjcpd_trailer",
+   "fieldtype": "Link",
+   "label": "Trailer ",
+   "options": "Resource",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcpd_cancelling_date",
+   "fieldtype": "Datetime",
+   "label": "Cancelling Date"
+  },
+  {
+   "fieldname": "vmjcpd_batch",
+   "fieldtype": "Link",
+   "label": "Batch",
+   "options": "Batch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcpd_serial_no",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Serial No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcpd_purchase_invoice",
+   "fieldtype": "Link",
+   "label": "Purchase Invoice",
+   "link_filters": "[[\"Purchase Invoice\",\"docstatus\",\"=\",\"1\"]]",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Check this box in case this service was done outside the Garage.",
+   "fieldname": "vmjcpd_is_external_job",
+   "fieldtype": "Check",
+   "label": "In External Job",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vmjcpd_stock_ref.total_amount",
+   "fetch_if_empty": 1,
+   "fieldname": "vmjcpd_stock_cost",
+   "fieldtype": "Currency",
+   "label": "Stock Cost",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-17 14:21:14.162936",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "VMJC Part Details",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

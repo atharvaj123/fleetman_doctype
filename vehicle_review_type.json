@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:review_type",
+ "creation": "2024-08-29 14:27:39.220192",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "review_type",
+  "review_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "review_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Review Type",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "review_details",
+   "fieldtype": "Small Text",
+   "label": "Review Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-30 20:36:39.537864",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Vehicle Review Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

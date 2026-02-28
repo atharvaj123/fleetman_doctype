@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-29 14:21:45.014587",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "review_point",
+  "column_break_xpbh",
+  "is_review_done",
+  "observation",
+  "first_image",
+  "second_image",
+  "third_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Vehicle Review Type"
+  },
+  {
+   "fetch_from": "type.review_details",
+   "fieldname": "review_point",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Review Point"
+  },
+  {
+   "fieldname": "column_break_xpbh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_review_done",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Review Done"
+  },
+  {
+   "depends_on": "eval: doc.is_review_done == 1",
+   "fieldname": "observation",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Observation"
+  },
+  {
+   "depends_on": "eval: doc.is_review_done == 1",
+   "fieldname": "first_image",
+   "fieldtype": "Attach Image",
+   "label": "1st Image"
+  },
+  {
+   "depends_on": "eval: doc.is_review_done == 1;",
+   "fieldname": "second_image",
+   "fieldtype": "Attach Image",
+   "label": "2nd Image"
+  },
+  {
+   "depends_on": "eval: doc.is_review_done == 1;",
+   "fieldname": "third_image",
+   "fieldtype": "Attach Image",
+   "label": "3rd Image"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-29 14:28:41.700633",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Vehicle Review Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:DD-{dd_driver}-{dd_document_type}-{####}",
+ "creation": "2024-07-19 23:17:03.977914",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "dd_driver",
+  "section_break_wxoi",
+  "dd_document_type",
+  "column_break_qjaw",
+  "dd_issue_date",
+  "dd_expiry_date",
+  "section_break_gpgu",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gpgu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Driver Document",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "dd_driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "fieldname": "section_break_wxoi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "dd_document_type",
+   "fieldtype": "Link",
+   "label": "Document Type",
+   "options": "Document Type"
+  },
+  {
+   "fieldname": "column_break_qjaw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dd_issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Issue Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dd_expiry_date",
+   "fieldtype": "Date",
+   "label": "Expirty Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-24 20:58:30.459475",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Driver Document",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

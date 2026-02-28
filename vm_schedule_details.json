@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "autoname": "format:VMSD-{######}",
+ "creation": "2024-07-19 22:57:17.408174",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vmsd_service",
+  "vmsd_part",
+  "column_break_zmnm",
+  "vmsd_maintenance_period_type",
+  "mileage",
+  "vmsd_distance",
+  "vmsd_duration",
+  "date",
+  "section_break_sffn",
+  "vmsd_last_maintenance_date",
+  "column_break_wrtu",
+  "vmsd_last_odometer",
+  "vmsd_trip_reference",
+  "last_vm_job_reference",
+  "section_break_kcng",
+  "dont_send_alert"
+ ],
+ "fields": [
+  {
+   "description": "Item of Type \"Spare Parts\"",
+   "fieldname": "vmsd_part",
+   "fieldtype": "Link",
+   "label": "Part",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Spare Parts\"]]",
+   "options": "Item"
+  },
+  {
+   "fieldname": "vmsd_maintenance_period_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Maintenance Period Type",
+   "options": "\nMileage\nDistance\nDuration\nDate"
+  },
+  {
+   "depends_on": "eval:doc.vmsd_maintenance_period_type == \"Distance\";",
+   "fieldname": "vmsd_distance",
+   "fieldtype": "Int",
+   "label": "Distance",
+   "mandatory_depends_on": "eval:doc.vmsd_maintenance_period_type == \"Distance\";"
+  },
+  {
+   "depends_on": "eval:doc.vmsd_maintenance_period_type == \"Duration\";",
+   "fieldname": "vmsd_duration",
+   "fieldtype": "Duration",
+   "label": "Duration",
+   "mandatory_depends_on": "eval:doc.vmsd_maintenance_period_type == \"Duration\";"
+  },
+  {
+   "description": "Item of type \"Maintenance Jobs\"",
+   "fieldname": "vmsd_service",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Service",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Maintenance Jobs\"]]",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_zmnm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_sffn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vmsd_last_maintenance_date",
+   "fieldtype": "Date",
+   "label": "Last Maintenance Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wrtu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vmsd_last_odometer",
+   "fieldtype": "Int",
+   "label": "Last Odometer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmsd_trip_reference",
+   "fieldtype": "Link",
+   "label": "Trip Reference",
+   "options": "Trip",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.vmsd_maintenance_period_type == \"Date\";",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "mandatory_depends_on": "eval:doc.vmsd_maintenance_period_type == \"Date\";"
+  },
+  {
+   "depends_on": "eval:doc.vmsd_maintenance_period_type == \"Mileage\";",
+   "fieldname": "mileage",
+   "fieldtype": "Int",
+   "label": "Mileage",
+   "mandatory_depends_on": "eval:doc.vmsd_maintenance_period_type == \"Mileage\";",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "last_vm_job_reference",
+   "fieldtype": "Link",
+   "label": "Last VM Job Reference",
+   "options": "VM Job Card",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_kcng",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "dont_send_alert",
+   "fieldtype": "Check",
+   "label": "Don't send alert"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-09 13:46:36.446836",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "VM Schedule Details",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-05 15:31:58.137252",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vmjcsd_job",
+  "vmjcsd_date",
+  "vmjcsd_resource_type",
+  "vmjcsd_amount",
+  "vmjcsd_is_tax",
+  "vmjcsd_p_taxes_and_charges",
+  "vmjcsd_s_taxes_and_charges",
+  "vmjcsd_notes",
+  "column_break_xmtr",
+  "vmjcsd_is_external",
+  "vmjcsd_dont_create_invoices",
+  "vmjcsd_purchase_invoice",
+  "vmjcsd_sales_invoice",
+  "section_break_hooy",
+  "vmjcsd_last_jc",
+  "column_break_vhac",
+  "vmjcsd_last_jc_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "vmjcsd_job",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Job",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "vmjcsd_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "vmjcsd_notes",
+   "fieldtype": "Small Text",
+   "label": "Job Notes"
+  },
+  {
+   "fieldname": "section_break_hooy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vmjcsd_last_jc",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Last Job Card",
+   "options": "VM Job Card",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vhac",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vmjcsd_last_jc_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Last Job Card Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vmjcsd_resource_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Resource Type",
+   "options": "Vehicle\nTrailer",
+   "reqd": 1,
+   "sort_options": 1
+  },
+  {
+   "fieldname": "column_break_xmtr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "vmjcsd_is_external",
+   "fieldtype": "Check",
+   "label": "Is External Job"
+  },
+  {
+   "fieldname": "vmjcsd_purchase_invoice",
+   "fieldtype": "Link",
+   "label": "Linked Purchase Invoice",
+   "link_filters": "[[\"Purchase Invoice\",\"docstatus\",\"=\",\"1\"]]",
+   "no_copy": 1,
+   "options": "Purchase Invoice",
+   "read_only_depends_on": "eval:doc.vmjcsd_is_external == 0"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "vmjcsd_amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "non_negative": 1
+  },
+  {
+   "depends_on": "eval:doc.vmjcsd_is_external == 0",
+   "fieldname": "vmjcsd_sales_invoice",
+   "fieldtype": "Link",
+   "label": "Linked Sales Invoice",
+   "link_filters": "[[\"Sales Invoice\",\"docstatus\",\"=\",\"1\"]]",
+   "no_copy": 1,
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.vmjcsd_is_external == 0",
+   "fieldname": "vmjcsd_is_tax",
+   "fieldtype": "Check",
+   "label": "Is Tax"
+  },
+  {
+   "depends_on": "eval:doc.vmjcsd_is_external==0 && doc.vmjcsd_is_tax==1",
+   "fieldname": "vmjcsd_p_taxes_and_charges",
+   "fieldtype": "Link",
+   "label": "Purchase Taxes and Charges Template",
+   "options": "Purchase Taxes and Charges Template"
+  },
+  {
+   "depends_on": "eval:doc.vmjcsd_is_external==0 && doc.vmjcsd_is_tax==1",
+   "fieldname": "vmjcsd_s_taxes_and_charges",
+   "fieldtype": "Link",
+   "label": "Sales Taxes and Charges Template",
+   "options": "Sales Taxes and Charges Template"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.vmjcsd_is_external==0",
+   "fieldname": "vmjcsd_dont_create_invoices",
+   "fieldtype": "Check",
+   "label": "Don't Create Invoices"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-02 16:32:24.649202",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "VMJC Service Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

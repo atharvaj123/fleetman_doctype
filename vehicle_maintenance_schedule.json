@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "autoname": "field:vms_vehicle",
+ "creation": "2024-07-19 22:52:28.374720",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_details_section",
+  "vms_vehicle",
+  "column_break_seum",
+  "vms_last_trip_odo",
+  "vms_last_trip_ref",
+  "maintenance_schedule_section",
+  "vms_schedule"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "fieldname": "vms_vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Resource",
+   "unique": 1
+  },
+  {
+   "fieldname": "maintenance_schedule_section",
+   "fieldtype": "Section Break",
+   "label": "Maintenance Schedule"
+  },
+  {
+   "fieldname": "vms_schedule",
+   "fieldtype": "Table",
+   "label": "Schedule",
+   "options": "VM Schedule Details"
+  },
+  {
+   "fieldname": "column_break_seum",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vms_last_trip_odo",
+   "fieldtype": "Int",
+   "label": "Last Trip Odometer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vms_last_trip_ref",
+   "fieldtype": "Link",
+   "label": "Last Trip Reference",
+   "options": "Trip",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Maintenance Records",
+   "link_doctype": "Vehicle Maintenance Record",
+   "link_fieldname": "vmr_vehicle"
+  }
+ ],
+ "modified": "2024-11-30 20:36:25.952308",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Vehicle Maintenance Schedule",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage User",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "WKT Garage Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "autoname": "format:VMReq-{MM}{YY}-{#####}",
+ "creation": "2024-08-29 14:02:31.911550",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "request_section",
+  "requested_by",
+  "requested_on",
+  "column_break_ytux",
+  "vehicle",
+  "driver",
+  "section_break_dksw",
+  "requested_job",
+  "requested_spare_part",
+  "expected_cost",
+  "notes",
+  "column_break_sphr",
+  "last_maintenance_date",
+  "section_break_w6fk",
+  "request_approved_by",
+  "approved_on",
+  "column_break_jwvj",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_w6fk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Maintenance Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "request_section",
+   "fieldtype": "Section Break",
+   "label": "Request"
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "label": "Requested By",
+   "options": "Employee"
+  },
+  {
+   "default": "now",
+   "fieldname": "requested_on",
+   "fieldtype": "Date",
+   "label": "Requested On"
+  },
+  {
+   "fieldname": "column_break_ytux",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "fieldname": "section_break_dksw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "requested_job",
+   "fieldtype": "Link",
+   "label": "Requested Job",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Maintenance Jobs\"]]",
+   "options": "Item"
+  },
+  {
+   "fieldname": "requested_spare_part",
+   "fieldtype": "Link",
+   "label": "Requested Spare Part",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Spare Parts\"]]",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_sphr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_maintenance_date",
+   "fieldtype": "Date",
+   "label": "Last Maintenance Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "request_approved_by",
+   "fieldtype": "Link",
+   "label": "Request Approved By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Date",
+   "label": "Approved On"
+  },
+  {
+   "fieldname": "column_break_jwvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "expected_cost",
+   "fieldtype": "Currency",
+   "label": "Expected Cost"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-29 14:46:45.469501",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Vehicle Maintenance Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "autoname": "format:TV-{MM}{YY}-{#####}",
+ "creation": "2024-08-28 22:56:35.183517",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "driver",
+  "date",
+  "time",
+  "column_break_ifkn",
+  "violation_location",
+  "violation_gps_location",
+  "violations",
+  "speed_limit",
+  "max_speed",
+  "column_break_bkue",
+  "duration",
+  "section_break_6sk0",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_6sk0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Trip Violations",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "fieldname": "column_break_ifkn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "fieldname": "violations",
+   "fieldtype": "Section Break",
+   "label": "Violations"
+  },
+  {
+   "fieldname": "speed_limit",
+   "fieldtype": "Int",
+   "label": "Speed Limit",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "max_speed",
+   "fieldtype": "Int",
+   "label": "Max Speed",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_bkue",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "violation_location",
+   "fieldtype": "Small Text",
+   "label": "Violation Location"
+  },
+  {
+   "fieldname": "violation_gps_location",
+   "fieldtype": "Geolocation",
+   "label": "Violation GPS Location"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-28 23:19:15.322972",
+ "modified_by": "Administrator",
+ "module": "AmPower FleetMan",
+ "name": "Trip Violations",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
