@@ -1,0 +1,35 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "VM Job Card",
+  "enabled": 0,
+  "modified": "2024-07-25 13:35:49.014060",
+  "module": "AmPower FleetMan",
+  "name": "VM Job Card",
+  "script": "frappe.ui.form.on('VM Job Card', {\n    before_save(frm) {\n        frm.doc.vmjc_part_total = frm.doc.vmjc_part_rate * frm.doc.vmjc_part_quantity;\n\t},\n\t\n\tonload(frm) {\n\t},\n\t\n\ton_submit(frm) {\n\t    // Create a Stock Entry on Submit\n\t},\n\t\n\tafter_cancel(frm) {\n\t    // Delete the stock Entry created; linked in hidden field\n\t},\n\t\n\tvmjc_job(frm) {\n        frappe.call({\n            method: \"get_last_vmjc\",\n            args: {\n                'data': frm.doc\n            },\n            callback: function(data) {\n                if(data) {\n                    if (data.last_date)\n                        frm.set_value('vmjc_last_service_date', data.last_date);\n                    if (data.last_vmjc_ref)\n                        frm.set_value('vmjc_last_vmjc_ref', data.last_vmjc_ref);\n                    if (data.last_part_date)\n                        frm.set_value('vmjc_last_service_date', data.last_part_date);\n                    if (data.last_part_vmjc_ref)\n                        frm.set_value('vmjc_last_vmjc_ref', data.last_part_vmjc_ref);\n                }\n            }\n        });\n\t},\n\t\n\tvmjc_spare_part(frm) {\n        frappe.call({\n            method: \"get_last_vmjc\",\n            args: {\n                'data': frm.doc\n            },\n            callback: function(data) {\n                if(data) {\n                    if (data.last_date)\n                        frm.set_value('vmjc_last_service_date', data.last_date);\n                    if (data.last_vmjc_ref)\n                        frm.set_value('vmjc_last_vmjc_ref', data.last_vmjc_ref);\n                    if (data.last_part_date)\n                        frm.set_value('vmjc_last_service_date', data.last_part_date);\n                    if (data.last_part_vmjc_ref)\n                        frm.set_value('vmjc_last_vmjc_ref', data.last_part_vmjc_ref);\n                }\n            }\n        });\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Vehicle",
+  "enabled": 0,
+  "modified": "2024-07-22 16:13:57.942586",
+  "module": "AmPower FleetMan",
+  "name": "Vehicle Maintenance Record Datatable",
+  "script": "frappe.ui.form.on('Vehicle', {\n\trefresh(frm) {\n        frappe.call({\n            method: \"datatable_vehicle_maintenance_record\",\n            args: {\n                'data': frm.doc\n            },\n            callback: function(data) {\n                if(data) {\n                    const datatable = new DataTable('*[data-fieldname=\"custom_vmr_datatables\"]', {\n                        columns: data.columns,\n                        data: data.data\n                      });\n                }\n            }\n        });\n        frappe.call({\n            method: \"datatable_vehicle_maintenance_schedule\",\n            args: {\n                'data': frm.doc\n            },\n            callback: function(data) {\n                if(data) {\n                    const datatable = new DataTable('*[data-fieldname=\"custom_vms_datatables\"]', {\n                        columns: data.columns,\n                        data: data.data\n                      });\n                }\n            }\n        });\n    \t\n\t}\n})\n\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Vehicle Maintenance Record",
+  "enabled": 0,
+  "modified": "2024-07-25 10:05:14.709344",
+  "module": "AmPower FleetMan",
+  "name": "VM Job Datatable",
+  "script": "frappe.ui.form.on('Vehicle Maintenance Record', {\n\trefresh(frm) {\n\t\tfrappe.call({\n            method: \"datatable_vm_job_card\",\n            args: {\n                'data': frm.doc\n            },\n            callback: function(data) {\n                if(data) {\n                    const datatable = new DataTable('*[data-fieldname=\"vm_job_card_datatable\"]', {\n                        columns: data.columns,\n                        data: data.data,\n                        get_row_data: (row) => {\n                            // Define action button click behavior\n                            row.action = $('<button class=\"btn btn-default btn-sm\">View Details</button>').on('click', function() {\n                                var docname = row.name;\n                                frappe.set_route('Form', 'VM Job Card', docname);\n                            });\n                            return row;\n                        }\n                      });\n                }\n            }\n        });\n\t}\n})",
+  "view": "Form"
+ }
+]

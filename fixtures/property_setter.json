@@ -1,0 +1,18 @@
+[
+ {
+  "default_value": null,
+  "doc_type": "Resource",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocType",
+  "field_name": null,
+  "is_system_generated": 0,
+  "modified": "2024-11-30 20:50:54.331161",
+  "module": "AmPower FleetMan",
+  "name": "Resource-main-links_order",
+  "property": "links_order",
+  "property_type": "Small Text",
+  "row_name": null,
+  "value": "[\"1f7e2be0b3\", \"73c588d36f\", \"edf8b16826\"]"
+ }
+]
